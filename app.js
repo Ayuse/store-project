@@ -3,15 +3,18 @@ const ui = new UI();
 
 fakestore.getItem().then((data) => {
   console.log(data);
+  const response = data;
+  if (response) {
+    hideloader();
+  }
   show(data);
 });
+function hideloader() {
+  document.getElementById('loading').style.display = 'block';
+}
 
 function show(data) {
-  let item = ` <div class="item">
-  <img class="img" src="" alt="" />
-  <p>Item 1</p>
-  <a href="">www.item1.com</a>
-</div>`;
+  let item = ``;
 
   for (let r of data.storeData) {
     item += `
