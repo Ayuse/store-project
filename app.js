@@ -10,7 +10,7 @@ fakestore.getItem().then((data) => {
   show(data);
 });
 function hideloader() {
-  document.getElementById('loading').style.display = 'block';
+  document.getElementById('loading').style.display = 'none';
 }
 
 function show(data) {
