@@ -6,34 +6,44 @@ const getStore = async () => {
     const storeItem = await fetch(`https://fakestoreapi.com/products`);
     storeData = await storeItem.json();
     console.log(storeData);
+    show(storeData);
   } catch (err) {
     console.error(err);
   }
 };
+setTimeout(() => {
+  getStore();
+}, 8000);
+// if (storeData) {
+//   hideloader();
+// }
 function hideloader() {
   document.getElementById('loading').style.display = 'none';
 }
 
-// search.addEventListener('keyup', (e) => {
-//   const searchString = e.target.value.toLowerCase();
-//   console.log(searchString);
-//   const filteredStore = storeData.filter((storeitem) => {
-//     return storeitem.title.includes(searchString);
-//   });
-//   console.log(filteredStore);
-// });
-// function show(data) {
-//   let item = ``;
+// getStore();
 
-//   for (let r of data.storeData) {
-//     item += `
-//   <div class="item">
-//   <img class="img" src="${r.image}" alt="" />
-//   <h1>${r.title}</h1>
-//   <p>${r.description}</p>
-//   <p>${r.price}</p>
-// </div>
-//   `;
-//   }
-//   document.getElementById('itemDisplay').innerHTML = item;
-// }
+search.addEventListener('keyup', (e) => {
+  const searchString = e.target.value.toLowerCase();
+  console.log(searchString);
+  const filteredStore = storeData.filter((storeitem) => {
+    return storeitem.title.includes(searchString);
+  });
+  console.log(filteredStore);
+});
+
+const show = (data) => {
+  let item = data
+    .map((data) => {
+      return `
+  <div class="item">
+  <img class="img" src="${data.image}" alt="" />
+  <h1>${data.title}</h1>
+  <p>${data.description}</p>
+  <p>${data.price}</p>
+</div>
+  `;
+    })
+    .join('');
+  document.getElementById('itemDisplay').innerHTML = item;
+};
