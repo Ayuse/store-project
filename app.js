@@ -13,7 +13,7 @@ const getStore = async () => {
 };
 setTimeout(() => {
   getStore();
-}, 8000);
+}, 1500);
 // if (storeData) {
 //   hideloader();
 // }
@@ -27,9 +27,12 @@ search.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
   console.log(searchString);
   const filteredStore = storeData.filter((storeitem) => {
-    return storeitem.title.includes(searchString);
+    return (
+      storeitem.title.toLowerCase().includes(searchString) ||
+      storeitem.category.toLowerCase().includes(searchString)
+    );
   });
-  console.log(filteredStore);
+  show(filteredStore);
 });
 
 const show = (data) => {
