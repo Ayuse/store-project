@@ -41,9 +41,11 @@ const show = (data) => {
       return `
   <div class="item">
   <img class="img" src="${data.image}" alt="" />
+  <div class="item-details">
   <h1>${data.title}</h1>
   <p>${data.description}</p>
   <p>${data.price}</p>
+  </div>
 </div>
   `;
     })

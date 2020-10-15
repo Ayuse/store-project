@@ -1,14 +1,20 @@
-*, *::before, *::after {
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap");
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
+  font-family: 'Amiri', serif;
   margin: 0;
   background-color: #effffa;
 }
 
-h1, p {
+h1,
+p {
   margin: 0;
 }
 
@@ -31,10 +37,10 @@ nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header {
@@ -43,13 +49,14 @@ nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #cbf8eb;
   text-align: center;
 }
 
 .header-text {
+  font-family: 'Sansita Swashed', cursive;
   font-size: 5em;
   color: #29413a;
   padding-bottom: 10px;
@@ -66,7 +73,7 @@ nav .nav-item {
   height: 3.5em;
   border-width: 0;
   -webkit-box-shadow: -5px -5px 15px #ffffff99, 5px 5px 15px #152b4711;
-  box-shadow: -5px -5px 15px #ffffff99, 5px 5px 15px #152b4711;
+          box-shadow: -5px -5px 15px #ffffff99, 5px 5px 15px #152b4711;
   border-radius: 10px;
   padding: 20px 10px 20px 65px;
   font-weight: bold;
@@ -84,13 +91,13 @@ nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   row-gap: 30px;
   -webkit-column-gap: 30px;
-  column-gap: 30px;
+          column-gap: 30px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: 40px;
   margin-right: 40px;
   padding-bottom: 30px;
@@ -102,7 +109,7 @@ nav .nav-item {
   background-color: white;
   overflow: hidden;
   -webkit-box-shadow: -5px -5px 15px #ffffff99, 5px 5px 15px #152b4711;
-  box-shadow: -5px -5px 15px #ffffff99, 5px 5px 15px #152b4711;
+          box-shadow: -5px -5px 15px #ffffff99, 5px 5px 15px #152b4711;
   -webkit-transition: -webkit-transform 450ms ease-in-out;
   transition: -webkit-transform 450ms ease-in-out;
   transition: transform 450ms ease-in-out;
@@ -111,12 +118,15 @@ nav .nav-item {
 
 .item:hover, .item:focus {
   -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .img {
   max-width: 100px;
   max-height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .lds-ellipsis {
@@ -124,69 +134,128 @@ nav .nav-item {
   position: relative;
   width: 80px;
   height: 80px;
-  margin: 0 auto;
 }
 
 .lds-ellipsis div {
   position: absolute;
   top: 33px;
-  background-color: #29413a;
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #fff;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  background: #2298ad;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
 .lds-ellipsis div:nth-child(1) {
   left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
-  background-color: #29413a;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(2) {
   left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-  background-color: #29413a;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(3) {
   left: 32px;
-  background-color: #29413a;
-  animation: lds-ellipsis2 0.6s infinite;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(4) {
   left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-  background-color: #29413a;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @keyframes lds-ellipsis1 {
   0% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 
 @keyframes lds-ellipsis3 {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
   }
 }
 
 @keyframes lds-ellipsis2 {
   0% {
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
   100% {
-    transform: translate(24px, 0);
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
   }
 }
 
+@media (max-width: 450px) {
+  .header-text {
+    font-size: 4.5em;
+  }
+  .item {
+    width: 100%;
+    height: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .item-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 /*# sourceMappingURL=style.css.map */
